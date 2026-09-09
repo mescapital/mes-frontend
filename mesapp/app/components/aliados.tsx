@@ -25,7 +25,7 @@ const beneficios = [
 
 export function Aliados() {
   return (
-    <section className="bg-azul text-white">
+    <section id="vendors" className="scroll-mt-24 bg-azul text-white">
       <div className="mx-auto max-w-[80rem] px-6 py-24 lg:px-10 lg:py-32">
         <div className="grid grid-cols-1 gap-x-12 gap-y-14 lg:grid-cols-12">
           <div className="lg:col-span-5">

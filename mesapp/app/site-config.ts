@@ -18,9 +18,11 @@ export const site = {
 } as const;
 
 export const nav = [
-  { href: "#productos", label: "Productos" },
-  { href: "#sectores", label: "Sectores" },
+  { href: "#leasing", label: "Leasing" },
+  { href: "#otros-productos", label: "Otros productos" },
   { href: "#proceso", label: "Cómo trabajamos" },
+  { href: "#vendors", label: "Vendors" },
+  { href: "#por-que-mes", label: "Por qué Més" },
   { href: "#nosotros", label: "Nosotros" },
 ] as const;
 

@@ -40,8 +40,8 @@ export function Contacto() {
               <p className="eyebrow text-azul">Contacto</p>
             </Reveal>
             <Reveal delay={80}>
-              <h2 className="mt-5 max-w-[14ch] font-display text-title font-bold text-balance">
-                Contanos qué querés financiar
+              <h2 className="mt-5 max-w-[18ch] font-display text-title font-bold text-balance">
+                Estás a unos pasos de una buena decisión
               </h2>
             </Reveal>
             <Reveal delay={150}>
