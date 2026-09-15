@@ -41,7 +41,7 @@ export function Contacto() {
             </Reveal>
             <Reveal delay={80}>
               <h2 className="mt-5 max-w-[18ch] font-display text-title font-bold text-balance">
-                Estás a unos pasos de una buena decisión
+                ¡Dejanos tus datos y comentanos qué buscás para empezar!
               </h2>
             </Reveal>
             <Reveal delay={150}>

@@ -8,21 +8,36 @@ const numeros = [
   { valor: "100%", label: "enfocados en financiamiento productivo" },
 ];
 
-const socios = [
+/**
+ * El orden no es alfabético: sigue las iniciales de "Més" (Mauro, Esteban,
+ * Silvio).
+ *
+ * TODO(fotos): mientras `foto` sea null se muestran las iniciales. Cuando
+ * lleguen las fotos, guardarlas en public/images/socios/ y poner la ruta acá.
+ */
+const socios: {
+  nombre: string;
+  iniciales: string;
+  rol: string;
+  foto: string | null;
+}[] = [
   {
-    nombre: "Martín Ibarra",
-    rol: "Socio fundador",
-    foto: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=256&h=256&auto=format&fit=crop",
+    nombre: "Mauro Luis Mosto",
+    iniciales: "MM",
+    rol: "Cofundador y Director Comercial",
+    foto: null,
   },
   {
-    nombre: "Lucía Fernández",
-    rol: "Socia · Riesgo y estructuración",
-    foto: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=256&h=256&auto=format&fit=crop",
+    nombre: "Esteban Alejandro Rugna",
+    iniciales: "ER",
+    rol: "Cofundador",
+    foto: null,
   },
   {
-    nombre: "Diego Alonso",
-    rol: "Socio · Relación con entidades",
-    foto: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=256&h=256&auto=format&fit=crop",
+    nombre: "Silvio Fernando Provera",
+    iniciales: "SP",
+    rol: "Cofundador y Director Operativo",
+    foto: null,
   },
 ];
 
@@ -109,14 +124,23 @@ export function Nosotros() {
                 delay={i * 90}
                 className="border-t border-linea pt-5"
               >
-                <Image
-                  src={s.foto}
-                  alt=""
-                  aria-hidden="true"
-                  width={256}
-                  height={256}
-                  className="h-14 w-14 rounded-full object-cover"
-                />
+                {s.foto ? (
+                  <Image
+                    src={s.foto}
+                    alt=""
+                    aria-hidden="true"
+                    width={256}
+                    height={256}
+                    className="h-14 w-14 rounded-full object-cover"
+                  />
+                ) : (
+                  <span
+                    aria-hidden="true"
+                    className="flex h-14 w-14 items-center justify-center rounded-full bg-azul-wash text-[0.9375rem] font-bold tracking-[-0.01em] text-azul"
+                  >
+                    {s.iniciales}
+                  </span>
+                )}
                 <p className="mt-4 font-semibold tracking-[-0.01em]">
                   {s.nombre}
                 </p>

@@ -6,6 +6,7 @@ import { Entidades } from "./components/entidades";
 import { Faq } from "./components/faq";
 import { Hero } from "./components/hero";
 import { Nosotros } from "./components/nosotros";
+import { OtrosProductos } from "./components/otros-productos";
 import { Proceso } from "./components/proceso";
 import { Productos } from "./components/productos";
 import { Sectores } from "./components/sectores";
@@ -21,6 +22,7 @@ export default function Home() {
         <Entidades />
         <Productos />
         <Sectores />
+        <OtrosProductos />
         <Proceso />
         <Diferenciales />
         <Cobertura />

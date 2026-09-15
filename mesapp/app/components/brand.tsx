@@ -23,8 +23,8 @@ export function Mark({ className, style, espectro = false }: MarkProps) {
     >
       {espectro && (
         <defs>
-          {/* Diagonal: la M recorre azul → naranja → amarillo en el mismo orden
-              en que la sección Productos presenta los tres instrumentos. */}
+          {/* Diagonal: la M recorre azul → naranja → amarillo, la paleta que
+              identifica a leasing, prendarios y caución. */}
           <linearGradient id={ESPECTRO_ID} x1="0.2" y1="0" x2="0.6" y2="1">
             <stop offset="0%" stopColor="var(--color-azul)" />
             <stop offset="50%" stopColor="var(--color-naranja)" />

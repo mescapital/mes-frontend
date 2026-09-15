@@ -54,17 +54,50 @@ export function IconMetal({ className }: { className?: string }) {
   );
 }
 
-/** Grúa torre: construcción. */
-export function IconConstruccion({ className }: { className?: string }) {
+/** Excavadora sobre orugas: maquinaria. */
+export function IconMaquinaria({ className }: { className?: string }) {
   return (
     <svg {...base} className={className}>
-      <path d="M12 29V8" />
-      <path d="M4 8h24" />
-      <path d="M12 8 4 8l8-4Z" />
-      <path d="M22 8v6" />
-      <path d="M19 14h6l-1.4 6h-3.2L19 14Z" />
-      <path d="M8 29h8" />
-      <path d="M12 12.5 8.5 17M12 17.5 8.5 22M12 22.5 8.5 27" />
+      <rect x="3" y="23" width="18" height="5" rx="2.5" />
+      <path d="M5 23v-7h7l2.5 4v3" />
+      <path d="M13 17.5 21 7l6 5.5" />
+      <path d="M27 12.5v4.5l-4 1.5" />
+    </svg>
+  );
+}
+
+/** Monitor con trazo de pulso: equipamiento tecnológico, electrónico y médico. */
+export function IconEquipamiento({ className }: { className?: string }) {
+  return (
+    <svg {...base} className={className}>
+      <rect x="3.5" y="5" width="25" height="17" rx="2" />
+      <path d="M16 22v5M11 27h10" />
+      <path d="M8 14h4l2-4 3.5 8 2-4H24" />
+    </svg>
+  );
+}
+
+/** Pickup: rodados. */
+export function IconRodados({ className }: { className?: string }) {
+  return (
+    <svg {...base} className={className}>
+      <path d="M3.4 22H3v-6l3.5-5H16v5h11.5a1.5 1.5 0 0 1 1.5 1.5V22h-.4" />
+      <circle cx="9" cy="22" r="2.6" />
+      <circle cx="23" cy="22" r="2.6" />
+      <path d="M11.6 22h8.8" />
+      <path d="M6.5 16H16" />
+    </svg>
+  );
+}
+
+/** Panel solar bajo el sol: energías renovables. */
+export function IconSolar({ className }: { className?: string }) {
+  return (
+    <svg {...base} className={className}>
+      <circle cx="16" cy="7.5" r="2.6" />
+      <path d="M16 2v1.4M9.6 7.5H11M21 7.5h1.4M11.5 3.2l1 1M20.5 3.2l-1 1" />
+      <path d="M6.5 15h19l3 11h-25Z" />
+      <path d="M5 20.5h22M12.8 15l-1.1 11M19.2 15l1.1 11" />
     </svg>
   );
 }
