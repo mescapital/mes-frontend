@@ -212,18 +212,18 @@ export function Contacto() {
                     </div>
 
                     <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                      <p className="text-[0.8125rem] text-ink-faint">
+                        Usamos tus datos solo para responder esta consulta.
+                      </p>
                       <button
                         type="submit"
                         disabled={estado === "enviando"}
-                        className="rounded-full bg-azul px-8 py-4 font-semibold text-white transition-[transform,background-color] duration-200 hover:scale-[1.03] hover:bg-azul-deep active:scale-[0.98] disabled:pointer-events-none disabled:opacity-60"
+                        className="rounded-full bg-azul px-8 py-4 font-semibold text-white shadow-none transition-[transform,background-color,box-shadow] duration-200 hover:scale-[1.03] hover:bg-azul-deep hover:shadow-lg hover:shadow-azul/25 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-60"
                       >
                         {estado === "enviando"
                           ? "Enviando…"
                           : "Enviar consulta"}
                       </button>
-                      <p className="text-[0.8125rem] text-ink-faint">
-                        Usamos tus datos solo para responder esta consulta.
-                      </p>
                     </div>
                   </form>
                 )}

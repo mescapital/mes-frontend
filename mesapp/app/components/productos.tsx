@@ -9,16 +9,16 @@ import { SectionHeading } from "./section-heading";
  */
 const modalidades = [
   {
-    nombre: "Leasing financiero",
+    nombre: "Mes Leasing financiero",
     resumen:
       "El Tomador utiliza el bien a cambio de un canon mensual durante el plazo del contrato.",
-    listaLabel: "Al finalizar, el Tomador puede",
+    listaLabel: "Al finalizar, el Tomador debe",
     lista: [
       "Ejercer una opción de compra previamente establecida, generalmente por un canon adicional",
     ],
   },
   {
-    nombre: "Leasing operativo",
+    nombre: "Mes Leasing operativo",
     resumen:
       "Ofrece cuotas más bajas porque no busca recuperar el valor total del bien.",
     listaLabel: "Al finalizar, el Tomador puede",
@@ -29,7 +29,7 @@ const modalidades = [
     ],
   },
   {
-    nombre: "Sale and Leaseback",
+    nombre: "Mes Sale and Leaseback",
     resumen:
       "El propietario jurídico de un bien de capital puede venderlo a una entidad financiera para obtener liquidez inmediata, y simultáneamente firmar un contrato de leasing para seguir utilizándolo.",
     listaLabel: "Cómo quedan los roles",
@@ -67,7 +67,7 @@ export function Productos() {
         className="mx-auto max-w-[80rem] scroll-mt-24 px-6 py-24 lg:px-10 lg:py-32"
       >
         <SectionHeading
-          eyebrow="Leasing"
+          eyebrow="MES Leasing Capital"
           title="Tres modalidades para tu próxima inversión"
           lead="Usás el bien desde el primer día. Analizamos la operación y proponemos la modalidad que mejor le sirve a tu flujo de caja."
         />

@@ -133,7 +133,7 @@ export function SiteHeader() {
             <a
               href="#contacto"
               tabIndex={alTope ? -1 : undefined}
-              className={`shrink-0 whitespace-nowrap rounded-full bg-azul px-5 py-2.5 text-sm font-semibold text-white transition-[transform,opacity] duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.03] hover:bg-azul-deep active:scale-[0.98] ${
+              className={`shrink-0 whitespace-nowrap rounded-full bg-azul px-5 py-2.5 text-sm font-semibold text-white shadow-none transition-[transform,opacity,background-color,box-shadow] duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.03] hover:bg-azul-deep hover:shadow-lg hover:shadow-azul/25 hover:duration-200 active:scale-[0.98] ${
                 alTope ? "translate-x-full opacity-0" : "translate-x-0 opacity-100"
               }`}
             >
