@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Reveal } from "./reveal";
 import { SectionHeading } from "./section-heading";
 
@@ -11,33 +10,22 @@ const numeros = [
 /**
  * El orden no es alfabético: sigue las iniciales de "Més" (Mauro, Esteban,
  * Silvio).
- *
- * TODO(fotos): mientras `foto` sea null se muestran las iniciales. Cuando
- * lleguen las fotos, guardarlas en public/images/socios/ y poner la ruta acá.
  */
 const socios: {
   nombre: string;
-  iniciales: string;
   rol: string;
-  foto: string | null;
 }[] = [
   {
     nombre: "Mauro Luis Mosto",
-    iniciales: "MM",
     rol: "Cofundador y Director Comercial",
-    foto: null,
   },
   {
     nombre: "Esteban Alejandro Rugna",
-    iniciales: "ER",
     rol: "Cofundador",
-    foto: null,
   },
   {
     nombre: "Silvio Fernando Provera",
-    iniciales: "SP",
     rol: "Cofundador y Director Operativo",
-    foto: null,
   },
 ];
 
@@ -124,24 +112,7 @@ export function Nosotros() {
                 delay={i * 90}
                 className="border-t border-linea pt-5"
               >
-                {s.foto ? (
-                  <Image
-                    src={s.foto}
-                    alt=""
-                    aria-hidden="true"
-                    width={256}
-                    height={256}
-                    className="h-14 w-14 rounded-full object-cover"
-                  />
-                ) : (
-                  <span
-                    aria-hidden="true"
-                    className="flex h-14 w-14 items-center justify-center rounded-full bg-azul-wash text-[0.9375rem] font-bold tracking-[-0.01em] text-azul"
-                  >
-                    {s.iniciales}
-                  </span>
-                )}
-                <p className="mt-4 font-semibold tracking-[-0.01em]">
+                <p className="font-semibold tracking-[-0.01em]">
                   {s.nombre}
                 </p>
                 <p className="mt-1 text-[0.9375rem] text-ink-faint">
