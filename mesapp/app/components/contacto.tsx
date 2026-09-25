@@ -4,7 +4,10 @@ import { useState, type FormEvent } from "react";
 import { Reveal } from "./reveal";
 import { provincias, site } from "../site-config";
 
-type Estado = "idle" | "enviando" | "enviado";
+type Estado = "idle" | "enviando" | "enviado" | "error";
+
+// El ID del form es público por diseño (Formspree lo expone en el HTML).
+const FORMSPREE_URL = "https://formspree.io/f/mjykeana";
 
 /* Sin cajas: cada campo es una sola línea inferior, en el mismo lenguaje de
    borde fino que ya usa el resto del sitio (nav, dl de contacto, divisores
@@ -22,13 +25,19 @@ const campoSelect = `${campoBase} appearance-none pr-8 invalid:text-ink-faint`;
 export function Contacto() {
   const [estado, setEstado] = useState<Estado>("idle");
 
-  // TODO(backend): el formulario todavía no envía nada. Conectar a un Route
-  // Handler (app/api/contacto/route.ts) o a un proveedor de email.
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setEstado("enviando");
-    await new Promise((resolve) => setTimeout(resolve, 700));
-    setEstado("enviado");
+    try {
+      const res = await fetch(FORMSPREE_URL, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(event.currentTarget),
+      });
+      setEstado(res.ok ? "enviado" : "error");
+    } catch {
+      setEstado("error");
+    }
   }
 
   return (
@@ -115,6 +124,15 @@ export function Contacto() {
                   </div>
                 ) : (
                   <form onSubmit={onSubmit}>
+                    <input type="hidden" name="_subject" value="Nueva consulta desde la web de MES" />
+                    <input
+                      type="text"
+                      name="_gotcha"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      aria-hidden="true"
+                      className="hidden"
+                    />
                     <div className="grid grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2">
                       <Campo id="nombre" label="Nombre y apellido">
                         <input
@@ -212,8 +230,13 @@ export function Contacto() {
                     </div>
 
                     <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                      <p className="text-[0.8125rem] text-ink-faint">
-                        Usamos tus datos solo para responder esta consulta.
+                      <p
+                        role={estado === "error" ? "alert" : undefined}
+                        className={`text-[0.8125rem] ${estado === "error" ? "text-red-600" : "text-ink-faint"}`}
+                      >
+                        {estado === "error"
+                          ? "No pudimos enviar la consulta. Probá de nuevo o escribinos por email o WhatsApp."
+                          : "Usamos tus datos solo para responder esta consulta."}
                       </p>
                       <button
                         type="submit"
