@@ -57,20 +57,6 @@ export function SiteFooter() {
                   {site.phoneDisplay}
                 </a>
               </li>
-              <li className="flex gap-5 pt-2">
-                <a
-                  href={site.linkedin}
-                  className="text-white/70 transition-colors hover:text-white"
-                >
-                  LinkedIn
-                </a>
-                <a
-                  href={site.instagram}
-                  className="text-white/70 transition-colors hover:text-white"
-                >
-                  Instagram
-                </a>
-              </li>
             </ul>
           </div>
         </div>

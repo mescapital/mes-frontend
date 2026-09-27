@@ -9,7 +9,7 @@ export const site = {
   name: "Més Capital",
   tagline: "Impulsamos proyectos, potenciamos empresas.",
   url: "https://mescapital.com.ar", // MOCK
-  email: "contacto@mes-capital.com",
+  email: "mes.leasingcapital@gmail.com",
   phoneDisplay: "+54 9 11 2642-1964",
   phoneHref: "+5491126421964",
   whatsappHref: "https://wa.me/5491126421964",
