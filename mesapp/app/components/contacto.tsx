@@ -7,7 +7,7 @@ import { provincias, site } from "../site-config";
 type Estado = "idle" | "enviando" | "enviado" | "error";
 
 // El ID del form es público por diseño (Formspree lo expone en el HTML).
-const FORMSPREE_URL = "https://formspree.io/f/mjykeana";
+const FORMSPREE_URL = "https://formspree.io/f/xbglpblw";
 
 /* Sin cajas: cada campo es una sola línea inferior, en el mismo lenguaje de
    borde fino que ya usa el resto del sitio (nav, dl de contacto, divisores
